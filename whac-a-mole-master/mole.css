@@ -1,0 +1,97 @@
+body {
+    font-family: 'Super Mario Bros. NES';
+    text-align: right;
+    background: url("./mario-bg.jpg");
+    background-size: cover;
+}
+
+#board {
+    width: 540px;
+    height: 540px;
+    margin-top: 20px;  /* 20px from the top of the page */
+    display: flex;
+    flex-wrap: wrap;
+    background: url("./void.webp");
+    background-size: cover;
+    border: 3px solid white;
+    border-radius: 25px;
+    position: absolute;  /* Position absolutely to keep it at the top */
+    top: 30px;
+    left: 50%;  /* Center it horizontally */
+    transform: translateX(-50%); /* Offset by 50% of its width to perfectly center it */
+}
+
+#board div {
+    /* board = 540 x 540, divide into 3x3 tiles --> 180 x 180 per div */
+    width: 180px; 
+    height: 180px;
+    background-image: url("./portal-removebg-preview.png");
+    background-size: cover;
+}
+
+#board div img {
+    /* all img tags inside tiles */
+    width: 100px;
+    height: 100px;
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+#jumpscare {
+    position: fixed;  /* Make the jumpscare overlay cover the entire screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);  /* Semi-transparent black background */
+    display: none;  /* Initially hidden */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;  /* Ensure it's above other content */
+}
+
+#jumpscare img {
+    max-width: 80%;  /* Make sure the jumpscare image doesn't overflow */
+    max-height: 80%;
+    animation: fadeOut 3s forwards;  /* Fading effect */
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.marioButton {
+    background-image: url('./button.png'); /* Path to your button.png */
+    background-size: cover; /* Ensure the image covers the button fully */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the image */
+    width: 80px; /* Set a specific width for the button */
+    height: 80px; /* Set a specific height for the button */
+    border: none; /* Remove default border */
+    outline: none; /* Remove outline on focus */
+    cursor: pointer; /* Change cursor to pointer */
+    margin-top: 20px;
+
+    color: white; /* Text color */
+    font-family: 'Press Start 2P', cursive; /* Mario-like font */
+    font-size: 12px; /* Font size */
+    text-align: center; /* Center text horizontally */
+    line-height: 100px; /* Center text vertically (matches button height) */
+    text-shadow: 2px 2px 2px black; /* Add a shadow for text visibility */
+    
+}
+
+.marioButton:hover {
+    filter: brightness(1.2); /* Brighten the button on hover */
+}
+
+.marioButton:active {
+    transform: scale(0.9); /* Add a pressed effect */
+}

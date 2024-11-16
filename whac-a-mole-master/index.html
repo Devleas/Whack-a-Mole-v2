@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack A Mole</title>
+    <link rel="stylesheet" href="mole.css">
+    
+    <script src="mole.js"></script>
+</head>
+<body>
+    <h1>Whack a Mole</h1>
+    <h5>Score:</h5>
+    <h2 id="score">0</h2>
+    <div id="highScore">High Score: 0</div>
+    <button id="startButton" class="marioButton">Start Game</button>
+    <button id="resetButton" class="marioButton">Reset</button>
+    
+    <!-- Jumpscare container -->
+<div id="jumpscare" style="display: none;">
+    <img src="./rock.webp" alt="Jumpscare" id="jumpscareImage">
+</div>
+    <!-- 3x3 -->
+    <div id="board">
+    </div>
+</body>
+</html>
